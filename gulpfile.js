@@ -7,7 +7,7 @@ let gulp = require("gulp"),
 	sass = require('gulp-sass'),
 	cp = require("child_process");
 
-gulp.task("css", function() {
+gulp.task("scss", function() {
 	return gulp.src( '_assets/scss/**/*.scss' )
 		.pipe( sass().on('error', sass.logError) )
 		.pipe( autoprefixer() )
@@ -43,7 +43,7 @@ gulp.task("watch", function() {
 			"./_layouts/*.html",
 			"./_posts/**/*.*"
 		]
-	).on('change', gulp.series('jekylldev', 'css') );
+	).on('change', gulp.series('jekylldev', 'scss') );
 
 	gulp.watch( 'docs/**/*.html' ).on('change', browserSync.reload );
 	gulp.watch( 'docs/**/*.js' ).on('change', browserSync.reload );
