@@ -30,16 +30,32 @@ markdown: kramdown
 plugins:
   - jekyll-feed
 
+# Define sections
+# collections:
+# - sections
+collections:
+  staff:
+    output: true
+    permalink: /:collection/:name
+  about:
+    output: true
+    permalink: /about/:name
+
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
 exclude:
   - Gemfile
   - Gemfile.lock
-  - docs
-  - node_modules
-  - .gitignore
+  - readme.md
   - vendor/bundle/
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+  - node_modules
+  - docs
+  - _assets
+  - gulpfile.js
+  - package.json
+  - package-lock.json
+  # - .gitignore
