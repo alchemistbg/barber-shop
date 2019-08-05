@@ -45,8 +45,8 @@ gulp.task("watch", function() {
 		]
 	).on('change', gulp.series('jekylldev', 'scss') );
 
-	gulp.watch( 'docs/**/*.html' ).on('change', browserSync.reload );
-	gulp.watch( 'docs/**/*.js' ).on('change', browserSync.reload );
+	// gulp.watch( 'docs/**/*.html' ).on('change', browserSync.reload );
+	// gulp.watch( 'docs/**/*.js' ).on('change', browserSync.reload );
 });
 
 gulp.task("deploy", gulp.series('jekyllprod', 'scss'));
