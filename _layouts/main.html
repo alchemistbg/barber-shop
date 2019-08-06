@@ -23,19 +23,41 @@
         <div class="site no-sidebar">    
     {% endif %}
         
-            {% include header.html %}
-        
-            {% if page.sidebar %}
-                {% assign call_url = page.url | split: "/" %}
-                {% capture call_source %}{{ call_url[1] }}{% endcapture %}
-                {% include sidebar.html location=call_source %}
-            {% endif %}
+            <header class="site-header">
+                <div class="header-outer">
+                    <div class="header-inner">
+                        <div class="site-logo">
+                            <a href="/">
+                                <div>
+                                    <img src="{{ site.baseurl }}/images/RazorLogo.png" alt="">
+                                </div>
+                                <h5 class="site-title">
+                                    Barber shop
+                                </h5>
+                            </a>
+                        </div>
 
-            <main class="site-main">
-                {{ content }}
-            </main>
-            
-            {% include footer.html %}
+                        {% include navigation.html location="header" %}
+                    </div>
+                </div>
+            </header>
+        
+            <div class="wrapper">
+                {% if page.sidebar %}
+                    {% assign call_url = page.url | split: "/" %}
+                    {% capture call_source %}{{ call_url[1] }}{% endcapture %}
+                    {% include sidebar.html location=call_source %}
+                {% endif %}
+
+                <main class="site-main">
+                    {{ content }}
+                </main>
+            </div>
+
+            <footer class="site-footer">
+                {% include navigation.html location="footer" %}
+            </footer>
+                
         
     </div>
 

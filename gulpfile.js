@@ -39,9 +39,11 @@ gulp.task("watch", function() {
 	gulp.watch(
 		[
 			"./*.html",
+			"./_about/*.html",
 			"./_includes/*.html",
 			"./_layouts/*.html",
-			"./_posts/**/*.*"
+			"./_posts/**/*.*",
+			"./_staff/*.html"
 		]
 	).on('change', gulp.series('jekylldev', 'scss') );
 
