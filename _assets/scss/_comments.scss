@@ -1,0 +1,37 @@
+.comments {
+
+    &-list{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(auto, 5em);
+        grid-template-rows: auto;
+        grid-auto-flow: dense;
+        grid-gap: 1em;
+        list-style: none outside;
+        padding: 0.5em;
+    }
+    
+}
+
+.comment {
+    
+    &-item {
+        background: #ddd;
+        padding: 0 0.5em;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &-text {
+        padding-bottom: 0.3em;
+    }
+
+    &-author {
+        font-family: 'PT serif', serif;
+        font-style: italic;
+        text-align: right;
+        font-weight: bold;
+        padding-bottom: 0.3em;
+    }
+}
