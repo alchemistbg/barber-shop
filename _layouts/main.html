@@ -4,35 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- <title>{{site.title}} | {{ page.title }}</title> -->
-    <title></title>
-    <link rel="stylesheet" href="/css/site.css">
+
+    <link rel="shortcut icon" href="{{ site.baseurl }}/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="{{ site.baseurl }}/favicon.ico" type="image/x-icon">
+    
+    <title>{{site.title}} | {{ page.title }}</title>
+    
+    <link rel="stylesheet" href="{{ site.baseurl }}/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/site.css">
 </head>
-<body>
-
-    <div class="site">
-        <header class="site-header">
-            <h1>
-                <!-- <a href="/">&#x1F488; {{ site.title }}</a> -->
-            </h1>
-
-            <nav class="site-nav">
+<body class="{% if page.title %}page page-{{ page.title | slugify }}{% endif %}
+    {% if post.title %}post{% endif %}
+    {% if page.home %}home{% endif %}">
     
-            </nav>
+    {% if page.sidebar %}
+        <div class="site sidebar">
+    {% else %}
+        <div class="site no-sidebar">    
+    {% endif %}
+        
+            {% include header.html %}
+        
+            {% if page.sidebar %}
+                {% assign call_url = page.url | split: "/" %}
+                {% capture call_source %}{{ call_url[1] }}{% endcapture %}
+                {% include sidebar.html location=call_source %}
+            {% endif %}
 
-        </header>
+            <main class="site-main">
+                {{ content }}
+            </main>
+            
+            {% include footer.html %}
         
-        <main class="site-main">
-            <!-- {{ content }} -->
-        </main>
-        
-        <aside class="site-sidebar">
-    
-        </aside>
-        
-        <footer class=site-footer>
-    
-        </footer>
     </div>
 
 </body>
