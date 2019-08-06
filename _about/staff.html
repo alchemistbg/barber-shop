@@ -1,0 +1,16 @@
+---
+layout: main
+title: Team
+page_name: staff
+fa_icon: "fas fa-users"
+sidebar: 1
+order: 3
+---
+<h5>Това е нашия екип!</h5>
+{% for staff_member in site.staff %}
+  <h2>
+    <a href="{{ staff_member.url }}">
+      {{ staff_member.name }}
+    </a>
+  </h2>
+{% endfor %}
