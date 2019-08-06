@@ -8,12 +8,12 @@
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     
-    <title>Barber Shop 'RazoR' | Not Found</title>
+    <title>Barber Shop 'RazoR' | Booking</title>
     
     <link rel="stylesheet" href="/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="/css/site.css">
 </head>
-<body class="page page-not-found
+<body class="page page-booking
     
     ">
     
@@ -63,20 +63,27 @@
                 
 
                 <main class="site-main">
-                    <section class="pnf-message">
-    <header class="pnf-info">
-        <h2>404</h2>
-        <h4>Page not found!</h4>
-    </header>
-    <article>
-        <h5>This error occurs when you tried to access a web address that does not exist on the server of RazoR.</h5>
-        <ul class="pnf-reasons">
-            <li>If you think the problem is with us (for example: you came here from a wrong link in the RazoR web site), please <a href="mailto://therazor@razor.com">send an email describing how you got here</a>.</li>
-            <li>If you followed a link from an external page, the address may have changed, so use the search engine on RazoR.</li>
-            <li>If you are not sure what exactly happened, you can return to the <a href="/">RazoR homepage</a>.</li>
-        </ul>
-    </article>
-</section>
+                    <form action="#" method="POST">
+    <p>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="user_name">
+    </p>
+    <p>
+        <label for="mail">E-mail:</label>
+        <input type="email" id="mail" name="user_mail">
+    </p>
+    <p>
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="user_phone">
+        </p>
+    <p>
+        <label for="msg">Message:</label>
+        <textarea id="msg" name="user_message"></textarea>
+    </p>
+    <p class="button">
+        <button type="submit">Send your message</button>
+    </p>
+</form>
                 </main>
             </div>
 
