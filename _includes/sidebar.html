@@ -1,0 +1,18 @@
+{% assign location = include.location%}
+<aside class="site-sidebar">
+    <header class="site-sidebar-header">
+        <h4>{{ location | capitalize }}</h4>
+    </header>
+    <nav class="site-sidebar-nav">
+        {% if location == "about" %}
+            <ul class="fixed">
+                {% assign sorted_about = site.about | sort: "order" %}
+                {% for collection_page in sorted_about %}
+                    <li>
+                        <a href="{{ site.base_url }}/about/{{ collection_page.page_name }}"><i class="{{ collection_page.fa_icon }}"></i> {{ collection_page.title }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </nav>
+</aside>
