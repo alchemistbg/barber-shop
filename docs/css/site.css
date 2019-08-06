@@ -1,0 +1,211 @@
+@import url("https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&display=swap&subset=cyrillic,cyrillic-ext");
+@import url("https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap&subset=cyrillic,cyrillic-ext");
+:root {
+  --font-size-body-normal: 12px;
+  --font-size-body-large: 14px;
+  --font-size-body-Large: 16px;
+  --font-size-body-LARGE: 18px;
+  --main-content-width: 70em;
+  --color-body-text: #000;
+  --color-body-bg: #fff; }
+
+* {
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box; }
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0; }
+
+html {
+  font: var(--font-size-normal, 12px)/1.5 "PT Sans", sans-serif; }
+
+@media (min-width: 600px) {
+  html {
+    font-size: var(--font-size-large, 14px); } }
+
+@media (min-width: 1024px) {
+  html {
+    font-size: var(--font-size-Large, 16px); } }
+
+@media (min-width: 1600px) {
+  html {
+    font-size: var(--font-size-LARGE, 18px); } }
+
+body, table, form, select, option, input, textarea {
+  font: inherit;
+  color: var(--color-body-text);
+  background: var(--color-body-bg); }
+
+.site-title,
+h1, h2, h3, h4, h5, h6 {
+  font-size: 1em;
+  font-family: 'PT Serif', serif;
+  margin-bottom: 0.5em; }
+
+h1 {
+  font-size: 2.8em; }
+
+h2 {
+  font-size: 2.4em; }
+
+h3 {
+  font-size: 2.0em; }
+
+h4 {
+  font-size: 1.7em; }
+
+h5 {
+  font-size: 1.4em; }
+
+h6 {
+  font-size: 1.2em; }
+
+a {
+  text-decoration: none;
+  color: var(--color-link-default); }
+
+p, ul, ol {
+  padding-bottom: 1.5em; }
+
+ul, ol {
+  padding-left: 2em; }
+
+ul ul, ol ul, ul ol, ol ol {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em; }
+
+ol > li > ol > li {
+  list-style-type: lower-roman; }
+
+blockquote {
+  padding: 1rem; }
+
+blockquote .author {
+  font-style: italic;
+  text-align: right;
+  opacity: 0.5; }
+
+blockquote .author:before {
+  display: inline-block;
+  content: '\2014';
+  padding-right: 0.5em; }
+
+.site-header {
+  background: url("../images/test.jpg") no-repeat;
+  background-size: cover;
+  height: 50vh; }
+
+.site .header-outer {
+  background: rgba(255, 255, 255, 0.8); }
+
+.site .header-inner {
+  max-width: var(--main-content-width);
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  border: 2px solid purple; }
+
+.site-logo a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid blue; }
+
+.site-title {
+  font-style: italic;
+  line-height: 1;
+  pointer-events: none; }
+
+.nav-header {
+  margin-left: auto; }
+  .nav-header ul {
+    display: flex;
+    border: 2px solid green;
+    list-style: none outside;
+    padding-left: 0;
+    padding-bottom: 0.3em; }
+    @media (max-width: 650px) {
+      .nav-header ul {
+        width: 100%; } }
+  .nav-header li {
+    font-size: 1.1em;
+    font-weight: bold;
+    padding-left: 2em; }
+    @media (max-width: 650px) {
+      .nav-header li {
+        padding-left: 0; } }
+  @media (max-width: 650px) {
+    .nav-header li i {
+      display: none; } }
+
+.comments-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto, 5em);
+  grid-template-rows: auto;
+  grid-auto-flow: dense;
+  grid-gap: 1em;
+  list-style: none outside;
+  padding: 0.5em; }
+
+.comment-item {
+  background: #ddd;
+  padding: 0 0.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
+
+.comment-text {
+  padding-bottom: 0.3em; }
+
+.comment-author {
+  font-family: 'PT serif', serif;
+  font-style: italic;
+  text-align: right;
+  font-weight: bold;
+  padding-bottom: 0.3em; }
+
+.form {
+  width: 80%;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 0.5em; }
+  .form.comment-form {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: "fname fmsg fmsg" "femail fmsg fmsg" ". fbtn ."; }
+  .form.contact-form {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas: "fname fmsg fmsg" "femail fmsg fmsg" "fsubj fmsg fmsg" ". fbtn ."; }
+  .form-name {
+    border: 2px solid green;
+    grid-area: fname; }
+  .form-email {
+    border: 2px solid red;
+    grid-area: femail; }
+  .form-subject {
+    border: 2px solid red;
+    grid-area: fsubj; }
+  .form-content {
+    border: 2px solid yellow;
+    grid-area: fmsg;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    resize: none; }
+  .form-button {
+    grid-area: fbtn; }
+  .form input {
+    padding: 0.5em; }
+
+.pnf-message {
+  padding-bottom: 2rem; }
+
+.pnf-info {
+  background: rgba(0, 0, 0, 0.5); }
