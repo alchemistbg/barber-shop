@@ -1,32 +1,37 @@
 @mixin bp($point) {
 
-    // @if $point == desktop-large {
-    //     @media (min-width: 1600px) {
-    //         @content;
-    //     }
-    // }
-
-    // @else 
-    @if $point == desktop {
-        @media (min-width: 1250px) {
+    @if $point == desktopl {
+        @media (min-width: 1600px) {
             @content;
         }
     }
 
-    @else if $point == laptop {
+    @else if $point == desktopm {
+        @media (min-width: 1281px) and (max-width: 1599px) {
+            @content;
+        }
+    }
+
+    @else if $point == desktops {
         @media (max-width: 1280px) {
             @content;
         }
     }
 
-    @else if $point == tablet {
+    @else if $point == tabletl {
         @media (max-width: 1024px) {
             @content;
         }
     }
 
+    @else if $point == tablets {
+        @media (max-width: 768px) {
+            @content;
+        }
+    }
+
     @else if $point == phone {
-        @media (max-width: 650px) {
+        @media (max-width: 450px) {
             @content;
         }
     }

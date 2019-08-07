@@ -1,3 +1,9 @@
 .site {
-    
+    &-title {
+        font-family: 'PT Serif', serif;
+        font-size: 1.5em;
+        font-weight: bold;
+        line-height: 1;
+        padding-bottom: 0.5em;
+    }
 }

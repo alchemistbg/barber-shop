@@ -1,29 +1,57 @@
-.form {
-
-    width: 80%;
+#job-form,
+#comment-form,
+#contact-form {
+    border: 2px solid var(--color-border-main);
+    border-radius: var(--border-radius-main);
+    padding: 1em;
     margin: 0 auto;
+}
+
+.form {
     display: grid;
     grid-gap: 0.5em;
     
+    &-header{
+        padding-bottom: 0.5em;
+    }
+
     &.comment-form {
         grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 2.8em);
         grid-template-areas:
-        "fname fmsg fmsg"
-        "femail fmsg fmsg"
-        ". fbtn .";    
+                "fname fmsg fmsg"
+                "femail fmsg fmsg"
+                ". fbtn .";    
     }
     
     &.contact-form {
         grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(4, 1fr);
+        grid-template-rows: repeat(4, 2.8em);
         grid-template-areas:
-        "fname fmsg fmsg"
-        "femail fmsg fmsg"
-        "fsubj fmsg fmsg"
-        ". fbtn .";    
+                "fname fmsg fmsg"
+                "femail fmsg fmsg"
+                "fsubj fmsg fmsg"
+                ". fbtn .";    
     }
     
+    &.job-form {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(5, 2.8em);
+        grid-template-areas:
+                "fpos ffile ffile"
+                "fname fmsg fmsg"
+                "femail fmsg fmsg"
+                "fphone fmsg fmsg"
+                ". fbtn .";    
+    }
+
+    &.comment-form, &.contact-form, &.job-form{
+        @include bp (tablets){
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
     &-name {
         border: 2px solid green;
         grid-area: fname;
@@ -33,10 +61,30 @@
         border: 2px solid red;
         grid-area: femail;
     }
+
+    &-phone {
+        border: 2px solid red;
+        grid-area: fphone;
+    }
+
+    &-file, &-pos {
+        display: flex;
+        align-items: center;
+    }
+
+    &-file {
+        border: 2px solid red;
+        grid-area: ffile;
+    }
     
     &-subject {
         border: 2px solid red;
         grid-area: fsubj;
+    }
+    
+    &-pos {
+        border: 2px solid red;
+        grid-area: fpos;
     }
     
     &-content {
@@ -53,8 +101,36 @@
     &-button {
         grid-area: fbtn;
     }
+
+    input, select{
+        border: 2px solid black;
+        // width: 100%;
+    }
     
-    input {
+    select {
+        height: 2.75em;
+        flex-grow: 1;
+        padding: 0.5em 0;
+    }
+    
+    input[type="file"] {
+        flex-grow: 1;
         padding: 0.5em;
+    }
+
+    &-pos, &-file {
+        padding: 0em;
+    }
+
+    &-name, &-email, &-phone, &-subject, &-button{
+        @include bp (tablets){
+            padding: 0.684em 0;
+        }
+    }
+    
+    &-content {
+        @include bp (tablets){
+            height: 8em;
+        }
     }
 }
