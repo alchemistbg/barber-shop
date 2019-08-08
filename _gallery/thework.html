@@ -1,0 +1,130 @@
+---
+layout: main
+title: Our Work 
+page_name: thework
+sidebar: 1
+order: 2
+gallery:
+  - file: /images/work_01.jpg
+    aspectratio: portrait
+  - file: /images/work_02.jpg
+    aspectratio: landscape
+  - file: /images/work_03.jpg
+    aspectratio: portrait
+  - file: /images/work_04.jpg
+    aspectratio: portrait
+  - file: /images/work_05.jpg
+    aspectratio: landscape
+  - file: /images/work_06.jpg
+    aspectratio: landscape
+  - file: /images/work_07.jpg
+    aspectratio: landscape
+  - file: /images/work_08.jpg
+    aspectratio: landscape
+  - file: /images/work_09.jpg
+    aspectratio: landscape
+  - file: /images/work_10.jpg
+    aspectratio: landscape
+  - file: /images/work_11.jpg
+    aspectratio: landscape
+  - file: /images/work_12.jpg
+    aspectratio: landscape
+  - file: /images/work_13.jpg
+    aspectratio: landscape
+  - file: /images/work_14.jpg
+    aspectratio: landscape
+  - file: /images/work_15.jpg
+    aspectratio: landscape
+  - file: /images/work_16.jpg
+    aspectratio: portrait
+  - file: /images/work_17.jpg
+    aspectratio: landscape
+  - file: /images/work_18.jpg
+    aspectratio: portrait
+  - file: /images/work_19.jpg
+    aspectratio: landscape
+  - file: /images/work_20.jpg
+    aspectratio: landscape
+  - file: /images/work_21.jpg
+    aspectratio: landscape
+  - file: /images/work_22.jpg
+    aspectratio: portrait
+  - file: /images/work_23.jpg
+    aspectratio: portrait
+  - file: /images/work_24.jpg
+    aspectratio: landscape
+  - file: /images/work_25.jpg
+    aspectratio: landscape
+  - file: /images/work_26.jpg
+    aspectratio: portrait
+  - file: /images/work_27.jpg
+    aspectratio: portrait
+  - file: /images/work_28.jpg
+    aspectratio: landscape
+---
+<section class="gallery" id="gallery">
+
+    <div class="image-list">
+
+        {% for item in page.gallery %}
+        <div class="item {{ item.aspectratio }}">
+            <a href="#image_{{ forloop.index }}">
+                <img src="{{ site.baseurl }}{{ item.file }}" alt="Picture">
+            </a>
+        </div>
+        {% endfor %}
+        
+    </div>
+
+    <!-- <div class="ligth-box"></div> -->
+    {% for item in page.gallery %}
+        <div class="lightbox {{ item.aspectratio }}" id="image_{{ forloop.index }}">
+            <div class="box">
+                <a class="btn close" href="#gallery" id="closebtn{{ forloop.index }}"><i class="fas fa-times"></i></a>
+                <div class="content">
+                    {% if forloop.index == 1 %}
+                    <a class="btn prev" href="#image_{{ forloop.length }}" id="prevbtn{{ forloop.index }}"><i class="fas fa-chevron-left"></i></a>
+                    {% else %}
+                    <a class="btn prev" href="#image_{{ forloop.index | minus: 1 }}" id="prevbtn{{ forloop.index }}"><i class="fas fa-chevron-left"></i></a>
+                    {% endif %}
+
+                    <img src="{{ site.baseurl }}{{ item.file }}">
+                    {% if forloop.index == forloop.length %}
+                    <a class="btn next" href="#image_1"><i class="fas fa-chevron-right" id="nextbtn{{ forloop.index }}"></i></a>
+                    {% else %}
+                    <a class="btn next" href="#image_{{ forloop.index | plus: 1 }}" id="nextbtn{{ forloop.index }}"><i class="fas fa-chevron-right"></i></a>
+                    {% endif %}
+
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    {% endfor %}
+    <script type="text/javascript">
+        function clickBtn(btn){
+            let evt = new MouseEvent('click', {
+                bubbles: true,
+                cancelable: true,
+                view: window
+            });
+            btn.dispatchEvent(evt);
+        }
+
+        document.onkeydown = function(event) {
+            curImageIndex = document.URL.substring(document.URL.lastIndexOf('_') + 1);
+            btnToClick = null;
+            switch (event.keyCode) {
+                case 27:
+                    btnToClick = document.getElementById('closebtn' + curImageIndex);
+                    break;
+                case 37:
+                    btnToClick = document.getElementById('prevbtn' + curImageIndex);
+                    break;
+                case 39:
+                    btnToClick = document.getElementById('nextbtn' + curImageIndex);
+                    break;
+            }
+            clickBtn(btnToClick);
+        };
+    </script>
+</section>

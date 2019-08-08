@@ -1,0 +1,100 @@
+---
+layout: main
+title: The RazoR
+page_name: theshop
+<!-- sidebar: 1 -->
+order: 1
+gallery:
+  - file: /images/shop_01.jpg
+    aspectratio: landscape
+  - file: /images/shop_02.jpg
+    aspectratio: landscape
+  - file: /images/shop_03.jpg
+    aspectratio: portrait
+  - file: /images/shop_04.jpg
+    aspectratio: landscape
+  - file: /images/shop_05.jpg
+    aspectratio: landscape
+  - file: /images/shop_06.jpg
+    aspectratio: portrait
+  - file: /images/shop_07.jpg
+    aspectratio: landscape
+  - file: /images/shop_08.jpg
+    aspectratio: landscape
+  - file: /images/shop_09.jpg
+    aspectratio: landscape
+  - file: /images/shop_10.jpg
+    aspectratio: landscape
+  - file: /images/shop_11.jpg
+    aspectratio: landscape
+  - file: /images/shop_12.jpg
+    aspectratio: portrait
+  - file: /images/shop_13.jpg
+    aspectratio: portrait
+---
+<section class="gallery" id="gallery">
+
+    <div class="image-list">
+
+        {% for item in page.gallery %}
+        <div class="item {{ item.aspectratio }}">
+            <a href="#image_{{ forloop.index }}">
+                <img src="{{ site.baseurl }}{{ item.file }}" alt="Picture">
+            </a>
+        </div>
+        {% endfor %}
+        
+    </div>
+
+    <!-- <div class="ligth-box"></div> -->
+    {% for item in page.gallery %}
+        <div class="lightbox {{ item.aspectratio }}" id="image_{{ forloop.index }}">
+            <div class="box">
+                <a class="btn close" href="#gallery" id="closebtn{{ forloop.index }}"><i class="fas fa-times"></i></a>
+                <div class="content">
+                    {% if forloop.index == 1 %}
+                    <a class="btn prev" href="#image_{{ forloop.length }}" id="prevbtn{{ forloop.index }}"><i class="fas fa-chevron-left"></i></a>
+                    {% else %}
+                    <a class="btn prev" href="#image_{{ forloop.index | minus: 1 }}" id="prevbtn{{ forloop.index }}"><i class="fas fa-chevron-left"></i></a>
+                    {% endif %}
+
+                    <img src="{{ site.baseurl }}{{ item.file }}">
+                    {% if forloop.index == forloop.length %}
+                    <a class="btn next" href="#image_1"><i class="fas fa-chevron-right" id="nextbtn{{ forloop.index }}"></i></a>
+                    {% else %}
+                    <a class="btn next" href="#image_{{ forloop.index | plus: 1 }}" id="nextbtn{{ forloop.index }}"><i class="fas fa-chevron-right"></i></a>
+                    {% endif %}
+
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    {% endfor %}
+    <script type="text/javascript">
+        function clickBtn(btn){
+            let evt = new MouseEvent('click', {
+                bubbles: true,
+                cancelable: true,
+                view: window
+            });
+            btn.dispatchEvent(evt);
+        }
+
+        document.onkeydown = function(event) {
+            curImageIndex = document.URL.substring(document.URL.lastIndexOf('_') + 1);
+            btnToClick = null;
+            switch (event.keyCode) {
+                case 27:
+                    btnToClick = document.getElementById('closebtn' + curImageIndex);
+                    break;
+                case 37:
+                    btnToClick = document.getElementById('prevbtn' + curImageIndex);
+                    break;
+                case 39:
+                    btnToClick = document.getElementById('nextbtn' + curImageIndex);
+                    break;
+            }
+            clickBtn(btnToClick);
+        };
+    </script>
+</section>

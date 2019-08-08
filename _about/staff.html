@@ -6,11 +6,28 @@ fa_icon: "fas fa-users"
 sidebar: 1
 order: 3
 ---
-<h5>Това е нашия екип!</h5>
-{% for staff_member in site.staff %}
-  <h2>
-    <a href="{{ staff_member.url }}">
-      {{ staff_member.name }}
-    </a>
-  </h2>
-{% endfor %}
+<h3>Our team</h3>
+
+<!-- <p></p> -->
+
+<ul class="members-list">
+	{% assign staff = site.staff | sort: "order" %}
+	{% for staff_member in staff %}
+	<li>
+		<div class="member">
+			<div class="media">
+				<img src="{{ site.baseurl }}/images/{{ staff_member.image }}" alt="">
+			</div>
+			<div class="info">
+				<h5 class="name">{{ staff_member.name }}</h5>
+				<p class="age">{{ staff_member.age }}</p>
+				{% if staff_member.position %}
+				<p class="pos">{{ staff_member.position }}</p>
+				{% endif %}
+				<p class="job">{{ staff_member.job }}</p>
+			</div>
+		</div>
+
+	</li>
+	{% endfor %}
+</ul>

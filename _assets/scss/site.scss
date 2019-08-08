@@ -4,6 +4,8 @@
 
 @import 'typography';
 @import 'layout';
+@import '_animations';
+
 
 @import '_site-header';
 @import 'navigation';
@@ -11,6 +13,7 @@
 
 @import '_comments';
 @import '_career';
+@import '_gallery';
 
 @import '_forms';
 @import '404'
