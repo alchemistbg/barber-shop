@@ -9,7 +9,7 @@
                 {% assign sorted_about = site.about | sort: "order" %}
                 {% for collection_page in sorted_about %}
                     <li>
-                        <a href="{{ site.base_url }}/about/{{ collection_page.page_name }}"><i class="{{ collection_page.fa_icon }}"></i> {{ collection_page.title }}</a>
+                        <a href="{{ site.baseurl }}/about/{{ collection_page.page_name }}"><i class="{{ collection_page.fa_icon }}"></i> {{ collection_page.title }}</a>
                     </li>
                 {% endfor %}
             </ul>
