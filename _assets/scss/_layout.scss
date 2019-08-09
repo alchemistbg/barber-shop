@@ -1,50 +1,42 @@
 .site {
 
-    &-header {
-        border: 4px solid red;
-    }
-    
-    .wrapper {
+    .page-wrapper {
         max-width: var(--main-content-width);
         margin: auto;
     }
 
-    &.sidebar .wrapper {
+    &.sidebar .page-wrapper,
+    &.no-sidebar .page-wrapper {
         display: flex;
-        border: 4px solid yellowgreen;
 
-        @include bp(phone){
+        @include bp(phones){
             display: block;
         }
     }
 
     &-main {
         min-width: 75%;
-        border: 4px solid green;
     }
 
     &-sidebar {
         min-width: 25%;
-        border: 4px solid blue;
     }
 
-    &-footer {
-        border: 4px solid pink;
-    }
+    // &-footer {
+    //     border: 4px solid pink;
+    // }
 
     &-logo a { 
         display:flex;
         flex-direction: column;
         align-items: center;
-        border: 2px solid blue;
     }
 
     @at-root .header-inner {
         max-width: var(--main-content-width);
         display: flex;
         align-items: center;
-        margin: auto;
-        border: 2px solid purple;        
+        margin: auto;      
 
         @include bp(tablets){
             flex-direction: column;
@@ -60,18 +52,10 @@
         }
         
         ul {
-            border: 2px solid aqua;
             display: flex;
         }
     }
 }
-
-
-// &-header {
-    //     background: url('../images/test.jpg') no-repeat;
-    //     background-size: cover;
-    //     height: 50vh;
-    // }
 
     // .header-outer {
     //     background: rgba(255, 255, 255, 0.8);

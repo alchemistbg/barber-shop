@@ -1,9 +1,48 @@
 .site {
+
+    &-header {
+    }
+    
+    @at-root .page-home &-header {
+        background: var(--color-gradient), url('../images/shop_01.jpg') no-repeat center;
+        background-size: cover;
+        height: 70vh;
+    }
+    
+    @at-root .header-slogan {
+        display: none;
+    }
+
+    @at-root .page-home .header-slogan {
+        display: block;
+    }
+
+    .header-slogan {
+        max-width: var(--main-content-width);
+        margin: auto;
+
+        h1 {
+            padding: 2em 0 1em 0;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+        }
+
+        h3 {
+            padding-bottom: 1em;
+        }
+    }
+
+    .header-outer {
+        padding: 1em 0em 0.8em 0em;
+        background: var(--color-header-bg);
+    }
+
     &-title {
+        padding-bottom: 0.5em;
         font-family: 'PT Serif', serif;
         font-size: 1.5em;
         font-weight: bold;
         line-height: 1;
-        padding-bottom: 0.5em;
+        color: var(--color-header-text);
     }
 }

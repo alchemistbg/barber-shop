@@ -30,8 +30,14 @@
         }
     }
 
-    @else if $point == phone {
-        @media (max-width: 450px) {
+    @else if $point == phonel {
+        @media (max-width: 600px) {
+            @content;
+        }
+    }
+
+    @else if $point == phones {
+        @media (max-width: 360px) {
             @content;
         }
     }

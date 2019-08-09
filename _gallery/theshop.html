@@ -81,6 +81,7 @@ gallery:
         }
 
         document.onkeydown = function(event) {
+			event.preventDefault();
             curImageIndex = document.URL.substring(document.URL.lastIndexOf('_') + 1);
             btnToClick = null;
             switch (event.keyCode) {

@@ -24,10 +24,11 @@
     {% endif %}
         
             <header class="site-header">
+
                 <div class="header-outer">
                     <div class="header-inner">
                         <div class="site-logo">
-                            <a href="{{ site.baseurl }}">
+                            <a href="/{{ site.baseurl }}">
                                 <div>
                                     <img src="{{ site.baseurl }}/images/RazorLogo.png" alt="">
                                 </div>
@@ -36,13 +37,23 @@
                                 </p>
                             </a>
                         </div>
-
+                        
                         {% include navigation.html location="header" %}
                     </div>
                 </div>
+
+                <div class="slogan header-slogan">
+                    <h1>Are you ready for new experience?</h1>
+                    <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, sit!</h3>
+                </div>
+
             </header>
-        
-            <div class="wrapper">
+
+            {% if page.home == true %}
+            <div class="home-wrapper">
+            {% else %}
+            <div class="page-wrapper">
+            {% endif %}
                 {% if page.sidebar %}
                     {% assign call_url = page.url | split: "/" %}
                     {% capture call_source %}{{ call_url[1] }}{% endcapture %}

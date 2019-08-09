@@ -1,17 +1,22 @@
 .nav-header {
+
     ul {
         list-style: none outside;
         padding: 0;
 
         li {
-            // font-size: 1.1em;
             font-weight: bold;
-            color: #000;
-            // background: #000;
-            padding: 0.5em 1em;
+
             display: flex;
             flex-direction: column;
             justify-content: center;
+        }
+        
+        li a {
+            padding: 0.5em 1em;
+            color: var(--color-nav-text);
+            background: var(--color-nav-bg);
+            border-radius: var(--border-radius-main);
         }
         
         li:not(:first-child){

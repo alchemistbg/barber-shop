@@ -4,11 +4,13 @@
 
 @import 'typography';
 @import 'layout';
+@import '_slogan';
+@import '_home';
 @import '_animations';
 
 
 @import '_site-header';
-@import 'navigation';
+@import '_navigation';
 @import '_site-footer';
 
 @import '_comments';
