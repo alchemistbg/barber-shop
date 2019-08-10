@@ -1,0 +1,33 @@
+.page {
+    .back-top {
+        display: none;
+        cursor: pointer;
+        padding: 0.5em 1em;
+        color: var(--color-body-bg);
+        border: none;
+        border-radius: var(--border-radius-main);
+        background: #000;
+        position: fixed;
+        right: 10px;
+        bottom: 10px;
+        opacity: 0.5;
+        transition: opacity 0.2s linear;
+
+        &:hover{
+            opacity: 1;
+            // background: red;
+        }
+
+        i {
+            display: block;
+        }
+
+        &.show{
+            animation: fadeInBackBtn 0.3s linear;
+        }
+        
+        &.hide{
+            animation: fadeOutBackBtn 0.3s linear;
+        }
+    }
+}
