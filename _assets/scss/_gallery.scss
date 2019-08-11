@@ -41,6 +41,9 @@
 }
 
 .lightbox:target {
+    // @at-root .back-top{
+    //     display: none;
+    // }
     opacity: 1;
     outline: none;
     top: 0;
@@ -48,13 +51,16 @@
 }
 
 .lightbox.landscape .box {
+    // width: 100vw;
     width: min-content;
+    height: auto;
     margin: 0% auto;
     position: relative;
 }
 
 .lightbox.portrait .box {
     height: min-content;
+    width: auto;
     margin: 0% auto;
     position: relative;
 }
@@ -62,6 +68,8 @@
 .lightbox.landscape img {
     // width: calc(100vw * 0.6);
     height: calc(100vh * 0.9);
+    // width: auto;
+    // width: 80vw;
 }
 
 .lightbox.portrait img {

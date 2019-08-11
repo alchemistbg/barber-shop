@@ -5,6 +5,8 @@
             section {
                 max-width: var(--main-content-width);
                 margin: auto;
+                padding: 1em;
+                border: 2px solid darkblue;
             }
 
             .break1, .break2{
@@ -23,41 +25,45 @@
 
                 .pic1, .pic2 {
                     width: 50vw;
-                    height: 35vh;
+                    height: 30vh;
                 }
             }
             
             .break1 {
                 .pic1{
-                    background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/images/shop_02.jpg') no-repeat center;
+                    background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../images/shop_02.jpg') no-repeat center;
                     background-size: cover;
                 }
                 
                 .pic2{
-                    background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/images/shop_05.jpg') no-repeat center;
+                    background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../images/shop_05.jpg') no-repeat center;
                     background-size: cover;
                 }
             }
             
             .break2 {
                 .pic1{
-                    background: var(--color-gradient), url('/images/shop_09.jpg') no-repeat top;
+                    background: var(--color-gradient), url('../images/shop_11.jpg') no-repeat top;
                     background-size: cover;
                 }
                 
                 .pic2{
-                    background: var(--color-gradient), url('/images/shop_10.jpg') no-repeat bottom;
+                    background: var(--color-gradient), url('../images/shop_12.jpg') no-repeat bottom;
                     background-size: cover;
                 }
             }
 
             .sec-main {
-                display: flex;
-                justify-content: space-between;
+                // display: flex;
+                // justify-content: space-between;
+                display: grid;
+                // align-items: center;
+                grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+                grid-gap: 1em;
             }
             
             .sec-item {
-                width: 30%;
+                // width: 30%;
                 overflow: hidden;
                 border: 2px solid green;
 

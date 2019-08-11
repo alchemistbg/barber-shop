@@ -2,20 +2,23 @@
 @import '_reset';
 @import '_mixins';
 
-@import 'typography';
-@import 'layout';
-@import '_slogan';
-@import '_home';
+@import '_typography';
+@import '_layout';
 @import '_animations';
-
+@import '_buttons';
 
 @import '_site-header';
 @import '_navigation';
 @import '_site-footer';
+@import '_home';
+@import '_slogan';
 
-@import '_comments';
 @import '_career';
+@import '_comments';
+@import '_blog';
 @import '_gallery';
+@import '_services';
+@import '_contacts';
 
 @import '_forms';
 @import '404'

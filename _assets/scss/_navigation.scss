@@ -10,18 +10,41 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+
+
+            // transform: translateY(-1em);
+            // transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+            // opacity: 0;
+            // transform: translateY(-100%);
+            // @at-root .page-home & {
+            //     animation: fadeInY 0.2s linear forwards;
+            //     @for $i from 1 through 10 {
+            //         &:nth-child(#{$i}) {
+            //             animation-delay: $i * 0.1s;
+            //             // background: red;
+            //         }
+            //     }
+            // }
         }
+
         
         li a {
             padding: 0.5em 1em;
             color: var(--color-nav-text);
             background: var(--color-nav-bg);
+            border: 2px solid var(--color-nav-bg);
             border-radius: var(--border-radius-main);
+        }
+
+        li a:hover{
+            background: var(--color-nav-text);
+            color: var(--color-nav-bg);
+            border: 2px solid var(--color-nav-bg);
+            animation: fadeIn 0.2s linear forwards;
         }
         
         li:not(:first-child){
             margin-left: 0.5em; 
-            // padding-left: 1.4em;
         }
     }
 }

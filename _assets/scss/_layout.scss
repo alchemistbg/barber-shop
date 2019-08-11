@@ -1,25 +1,40 @@
 .site {
 
+    .home-wrapper {
+        // border: 2px solid darkblue;
+    }
+    .page-wrapper {
+        padding: 1em;
+    }
+
     .page-wrapper {
         max-width: var(--main-content-width);
         margin: auto;
+        // border: 2px solid red;
     }
-
+    
     &.sidebar .page-wrapper,
     &.no-sidebar .page-wrapper {
         display: flex;
-
+        
         @include bp(phones){
             display: block;
         }
     }
-
-    &-main {
+    &.sidebar &-main {
         min-width: 75%;
+        // background: red;
     }
-
+    
+    &.no-sidebar &-main {
+        min-width: 100%;
+        // border: 2px solid green;
+        // background: yellow;
+    }
+    
     &-sidebar {
         min-width: 25%;
+        // border: 2px solid blue;
     }
 
     // &-footer {

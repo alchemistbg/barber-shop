@@ -7,17 +7,21 @@
     --main-content-width: 70em;
     --border-radius-main: 0.3em;
 
+    --color-body-bg: rgb(255, 255, 255);
+    --color-gradient: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+
     --color-header-text: rgb(255, 255, 255);
     --color-header-bg: rgb(0, 0, 0);
     --color-nav-text: rgb(0, 0, 0);
     --color-nav-bg: rgba(255, 255, 255);
     
-    --color-gradient: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-
     --color-body-text: rgb(0, 0, 0);
-    --color-body-bg: rgb(255, 255, 255);
+    --color-body-text-secondary: #693;
     --color-link-main: rgb(51, 102, 153);
     --color-link-hover: rgb(153, 0, 0);
+    
     --color-border-main: rgb(10, 50, 90);
+    --color-border-outer: #bbb;
+    --color-border-inner: #ddd;
 
 }

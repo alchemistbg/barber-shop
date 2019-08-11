@@ -1,10 +1,10 @@
 .page {
     .back-top {
         display: none;
+        border: none;
         cursor: pointer;
         padding: 0.5em 1em;
         color: var(--color-body-bg);
-        border: none;
         border-radius: var(--border-radius-main);
         background: #000;
         position: fixed;
@@ -13,13 +13,30 @@
         opacity: 0.5;
         transition: opacity 0.2s linear;
 
+        // &#back-top2{
+        //     position: fixed;
+        //     right: 100px;
+        //     bottom: 10px;
+        // }
+
         &:hover{
             opacity: 1;
-            // background: red;
+        }
+
+        &:focus {
+            outline: none
         }
 
         i {
             display: block;
+            padding-bottom: 0.2em;
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+            padding-bottom: 0;
+            line-height: 1;
         }
 
         &.show{
@@ -29,5 +46,9 @@
         &.hide{
             animation: fadeOutBackBtn 0.3s linear;
         }
+    }
+
+    .read-more {
+        background: red;
     }
 }
