@@ -8,21 +8,23 @@ fa_icon: "fas fa-blog"
 mainnav: 1
 footnav: 1
 ---
-
-
-<section>
-        <header>
-            <h3>Добър ден</h3>
+<section class="blog-content">
+        <header class="blog-header">
+            <h2>Blog</h2>
         </header>
     
-        <div class="content">
-            <p>Здрасти</p>
-            <ul>
+        <section class="posts-section">
+            <ul class="posts-list">
                 {% for post in site.posts %}
-                    <li>
-                    <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+                    <li class="post-item post-{{ post.importance }}">
+                        <div class="post-media {{ post.picorientation}}">
+                            <img src="{{ site.baseurl }}/{{ post.mainpic }}" alt="">
+                        </div>
+                        <!-- <h5>{{ post.title }}</h5> -->
+                        <p>{{ post.excerpt }}</p>
+                        <a class="btn read-more" href="{{ site.baseurl }}{{ post.url }}">Read more</a>
                     </li>
                 {% endfor %}
             </ul>
-        </div>
+        </section>
     </section>

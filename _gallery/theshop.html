@@ -28,9 +28,15 @@ gallery:
   - file: /images/shop_11.jpg
     aspectratio: landscape
   - file: /images/shop_12.jpg
-    aspectratio: portrait
+    aspectratio: landscape
   - file: /images/shop_13.jpg
     aspectratio: portrait
+  - file: /images/shop_14.jpg
+    aspectratio: landscape
+  - file: /images/shop_15.jpg
+    aspectratio: landscape
+  - file: /images/shop_16.jpg
+    aspectratio: landscape
 ---
 <section class="gallery" id="gallery">
 
@@ -71,6 +77,7 @@ gallery:
         </div>
     {% endfor %}
     <script type="text/javascript">
+		let picturesNumber = document.getElementsByClassName('box').length;
         function clickBtn(btn){
             let evt = new MouseEvent('click', {
                 bubbles: true,
@@ -86,7 +93,9 @@ gallery:
             btnToClick = null;
             switch (event.keyCode) {
                 case 27:
-                    btnToClick = document.getElementById('closebtn' + curImageIndex);
+					btnToClick = document.getElementById('closebtn' + curImageIndex);
+					console.log('fuck');
+					
                     break;
                 case 37:
                     btnToClick = document.getElementById('prevbtn' + curImageIndex);
