@@ -16,12 +16,14 @@ footnav: 1
         <section class="posts-section">
             <ul class="posts-list">
                 {% for post in site.posts %}
-                    <li class="post-item post-{{ post.importance }}">
-                        <div class="post-media {{ post.picorientation}}">
-                            <img src="{{ site.baseurl }}/{{ post.mainpic }}" alt="">
+                    <li class="post-item post-{{ post.importance }} post-{{ post.picorientation  }}"">
+                        <div class="wrapper">
+                            <div class="post-media {{ post.picorientation}}">
+                                <img src="{{ site.baseurl }}/{{ post.mainpic }}" alt="">
+                            </div>
+                            <!-- <h5>{{ post.title }}</h5> -->
+                            <p>{{ post.excerpt }}</p>
                         </div>
-                        <!-- <h5>{{ post.title }}</h5> -->
-                        <p>{{ post.excerpt }}</p>
                         <a class="btn read-more" href="{{ site.baseurl }}{{ post.url }}">Read more</a>
                     </li>
                 {% endfor %}

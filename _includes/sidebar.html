@@ -1,16 +1,19 @@
 {% assign location = include.location%}
 <aside class="site-sidebar">
-    <header class="site-sidebar-header">
-        <h4>{{ location | capitalize }}</h4>
+    <header class="header">
+        <h3>{{ location | capitalize }}</h3>
     </header>
-    <nav class="site-sidebar-nav">
+    <nav class="nav">
         {% if location == "about" %}
-            <ul class="fixed">
+            <ul>
+                <li {% if page.url == '/about/' %} class="selected"{% endif %}>
+                    <a class="btn" href="{{ site.baseurl }}/about/"><i class="fas fa-home"></i> Who are we</a>
+                </li>
                 {% assign sorted_about = site.about | sort: "order" %}
                 {% for collection_page in sorted_about %}
-                    <li>
-                        <a href="{{ site.baseurl }}/about/{{ collection_page.page_name }}"><i class="{{ collection_page.fa_icon }}"></i> {{ collection_page.title }}</a>
-                    </li>
+                <li {% if collection_page.location == page.url %} class="selected"{% endif %}>
+                    <a class="btn" href="{{ site.baseurl }}/about/{{ collection_page.page_name }}"><i class="{{ collection_page.fa_icon }}"></i> {{ collection_page.title }}</a>
+                </li>
                 {% endfor %}
             </ul>
         {% endif %}

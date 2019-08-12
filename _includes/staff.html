@@ -1,0 +1,18 @@
+<section class="member">
+    <header class="member-name">
+        <h2>Meet {{ page.name }} {{ page.family }}</h2>
+    </header>
+    <main class="member-info">
+        <div class="image portrait floatleft">
+            <img src="{{ site.baseurl }}/images/{{ page.image }}" alt="">
+        </div>
+        <div class="info">
+            {{ page.name }} is {{ page.age}} years old.
+            {% if page.position %} {{ page.name }} founded RazoR barber shop before {{page.joined}} years. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, laborum. {{ page.name }} doesn't work as barber very often these days. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum ducimus rem, consequuntur distinctio vel repellendus.
+            {% else %}
+            {{ page.name }} joined RazoR barber shop {{page.joined}} ago and now is working as {{ page.job }}. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, laborum. {{ page.name }} doesn't work as barber very often these days. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum ducimus rem, consequuntur distinctio vel repellendus.
+            {% endif %}
+        </div>
+    </main>
+</section>
+

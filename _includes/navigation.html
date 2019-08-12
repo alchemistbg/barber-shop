@@ -1,14 +1,18 @@
 <nav class="site-nav nav-{{ include.location }}">
     <ul>
         {% if include.location == "header" %}
-            {% assign mn_pages = site.pages | where: "mainnav", "1" | sort: "order" %}
-            {% for page in mn_pages %}
-                <li><a href="{{ site.baseurl }}{{ page.url }}"><i class="{{ page.fa_icon }}"></i> {{ page.title }}</a></li>
+            {% assign hn_pages = site.pages | where: "mainnav", "1" | sort: "order" %}
+            {% for page_item in hn_pages %}
+            <li {% if page.url contains page_item.permalink %} class="selected" {% endif %}>
+                <a class="btn" href="{{ site.baseurl }}{{ page_item.url }}"><i class="{{ page_item.fa_icon }}"></i> {{ page_item.title }}</a>
+            </li>
             {% endfor %}
         {% elsif include.location == "footer" %}
             {% assign fn_pages = site.pages | where: "footnav", "1" | sort: "order" %}
             {% for page in fn_pages %}
-                <li><a href="{{ site.baseurl }}{{ page.url }}"><i class="{{ page.fa_icon }}"></i> {{ page.title }}</a></li>
+            <li>
+                <a href="{{ site.baseurl }}{{ page.url }}"><i class="{{ page.fa_icon }}"></i> {{ page.title }}</a>
+            </li>
             {% endfor %}
         {% endif %}
     </ul>
