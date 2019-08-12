@@ -20,7 +20,8 @@
         padding: 1em 2rem;
         display: flex;
         align-items: center;
-        background: rgba(0, 0, 0, 0.5);
+        background: rgba(0, 0, 0, 0.3);
+        text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9);
         
         p {
             font-size: 8em;
@@ -36,6 +37,14 @@
     
     &-message {
         padding-bottom: 6em;
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.9);
+        .text-link {
+            text-shadow: 0px 0px 1px rgba(51, 102, 153, 0.9);
+            
+            :hover {
+                text-shadow: 0px 0px 1px rgba(153, 0, 0, 0.9);
+            }
+        }
     }
     &-message h4 {
         margin: 0;

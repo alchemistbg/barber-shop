@@ -28,23 +28,44 @@
         }
 
         
-        li a {
-            padding: 0.5em 1em;
-            color: var(--color-nav-text);
-            background: var(--color-nav-bg);
-            border: 2px solid var(--color-nav-bg);
-            border-radius: var(--border-radius-main);
-        }
+        // li a {
+        //     padding: 0.5em 1em;
+        //     color: var(--color-nav-text);
+        //     background: var(--color-nav-bg);
+        //     border: 2px solid var(--color-nav-bg);
+        //     border-radius: var(--border-radius-main);
+        // }
 
-        li a:hover{
-            background: var(--color-nav-text);
-            color: var(--color-nav-bg);
-            border: 2px solid var(--color-nav-bg);
-            animation: fadeIn 0.2s linear forwards;
-        }
+        // li a:hover{
+        //     background: var(--color-nav-text);
+        //     color: var(--color-nav-bg);
+        //     border: 2px solid var(--color-nav-bg);
+        //     animation: fadeIn 0.2s linear forwards;
+        // }
         
         li:not(:first-child){
             margin-left: 0.5em; 
+        }
+    }
+}
+
+.site-sidebar {
+    .nav{
+        ul {
+            list-style: none outside;
+            padding: 0;
+        }
+
+        li {
+            // padding-bottom: 1em;
+            padding-bottom: 0em;
+
+            display: block;
+        }
+        
+        .btn {
+            display: block;
+            min-width: 65%;
         }
     }
 }

@@ -22,8 +22,9 @@
         }
     }
     &.sidebar &-main {
-        min-width: 75%;
+        min-width: 83%;
         // background: red;
+        // border: 2px solid red;
     }
     
     &.no-sidebar &-main {
@@ -33,7 +34,9 @@
     }
     
     &-sidebar {
-        min-width: 25%;
+        min-width: 15%;
+        margin-right: 2%;
+        padding-right: 1%;
         // border: 2px solid blue;
     }
 
