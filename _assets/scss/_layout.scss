@@ -5,74 +5,66 @@
     }
     .page-wrapper {
         padding: 1em;
-    }
-
-    .page-wrapper {
         max-width: var(--main-content-width);
         margin: auto;
-        // border: 2px solid red;
     }
     
     &.sidebar .page-wrapper,
     &.no-sidebar .page-wrapper {
         display: flex;
         
-        @include bp(phones){
+        @include bp (tabletl){
             display: block;
         }
     }
+
     &.sidebar &-main {
         min-width: 83%;
-        // background: red;
-        // border: 2px solid red;
     }
     
     &.no-sidebar &-main {
         min-width: 100%;
-        // border: 2px solid green;
-        // background: yellow;
     }
     
     &-sidebar {
         min-width: 15%;
         margin-right: 2%;
         padding-right: 1%;
-        // border: 2px solid blue;
     }
 
     // &-footer {
     //     border: 4px solid pink;
     // }
 
-    &-logo a { 
-        display:flex;
-        flex-direction: column;
-        align-items: center;
-    }
+    // &-logo a { 
+    //     display:flex;
+    //     flex-direction: column;
+    //     align-items: center;
+    // }
 
-    @at-root .header-inner {
-        max-width: var(--main-content-width);
-        display: flex;
-        align-items: center;
-        margin: auto;      
+    // @at-root .header-inner {
+    //     max-width: var(--main-content-width);
+    //     display: flex;
+    //     align-items: center;
+    //     margin: auto;      
 
-        @include bp(tablets){
-            flex-direction: column;
-            align-items: center;
-        }
-    }
+    //     @include bp(tablets){
+    //         flex-direction: column;
+    //         align-items: center;
+    //     }
+    // }
     
-    @at-root .nav-header {
-        margin-left: auto;
+    // @at-root .nav-header {
+    //     margin-left: auto;
 
-        @include bp(tablets){
-            margin: auto;
-        }
+    //     @include bp(tablets){
+    //         margin: auto;
+    //     }
         
-        ul {
-            display: flex;
-        }
-    }
+    //     ul {
+    //         display: flex;
+    //     }
+    // }
 }
 
     // .header-outer {

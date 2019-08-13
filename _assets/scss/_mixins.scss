@@ -1,13 +1,7 @@
 @mixin bp($point) {
 
     @if $point == desktopl {
-        @media (min-width: 1600px) {
-            @content;
-        }
-    }
-
-    @else if $point == desktopm {
-        @media (min-width: 1281px) and (max-width: 1599px) {
+        @media (max-width: 1600px) {
             @content;
         }
     }

@@ -11,9 +11,11 @@
                 </li>
                 {% assign sorted_about = site.about | sort: "order" %}
                 {% for collection_page in sorted_about %}
-                <li {% if collection_page.location == page.url %} class="selected"{% endif %}>
+                
+                <li {% if collection_page.location == page.url or page.url contains collection_page.location %} class="selected"{% endif %}>
                     <a class="btn" href="{{ site.baseurl }}/about/{{ collection_page.page_name }}"><i class="{{ collection_page.fa_icon }}"></i> {{ collection_page.title }}</a>
                 </li>
+
                 {% endfor %}
             </ul>
         {% endif %}
