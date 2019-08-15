@@ -558,7 +558,7 @@ blockquote {
 
 .page-home .home-wrapper .contacts .wt-list {
   font-size: 1.1em; }
-  .page-home .home-wrapper .contacts .wt-list .hour {
+  .page-home .home-wrapper .contacts .wt-list .w-hour {
     font-size: 1.3em;
     font-weight: bold;
     color: var(--color-link-hover); }
