@@ -100,4 +100,20 @@
     .back-to-blog{
 
     }
+
+    .form-button, .form-button:hover, .form-button:focus {
+        margin-left: auto;
+        border: none;
+        outline: none;
+        padding: 1em;
+        background-color: var(--color-link-main);
+        color: white;
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+    
+    .form-button:hover {
+        background-color: var(--color-link-hover);
+        animation: fadeIn 0.2s ease-in;
+    }
 }

@@ -84,47 +84,148 @@
             
             
             <main class="site-main">
-                <div class="reservations-content">
-    <p>
-        <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid, magnam?</span>
-        <span>Minus iusto ipsum quas reprehenderit laborum! Totam sint architecto voluptates?</span>
-        <span>Dolorum odit sunt provident ratione numquam doloribus molestias esse a?</span>
-        <span>Dolorum minima nulla omnis, quasi laudantium quibusdam ipsam sint iste!</span>
-        <span>Necessitatibus nihil voluptatibus et tenetur a. Corporis iusto tempore eligendi?</span>
-        <span>Fugiat repudiandae suscipit ducimus ab quidem ex veniam dolore iusto.</span>
-        <span>Similique illo ex rem vitae ducimus? Ad aut exercitationem non?</span>
-        <span>Temporibus error inventore magnam ipsam, repellendus ab laudantium beatae quasi.</span>
-        <span>Debitis, totam. Nihil quasi amet rem est nisi voluptatem laborum!</span>
-        <span>Suscipit repudiandae quam animi iure voluptatem consequatur dicta et ex.</span>
-    </p>
-    <form action="#" method="POST">
-        <p>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="user_name">
-        </p>
-        <p>
-            <label for="mail">E-mail:</label>
-            <input type="email" id="mail" name="user_mail">
-        </p>
-        <p>
-                <label for="phone">Phone:</label>
-                <input type="tel" id="phone" name="user_phone">
-            </p>
-        <p>
-            <label for="msg">Message:</label>
-            <textarea id="msg" name="user_message"></textarea>
-        </p>
-        <p class="button">
-            <button type="submit">Send your message</button>
-        </p>
-    </form>
-</div>
+                <section class="booking-section">
+
+    <header class="booking-header">
+        <h2>Welcome to our booking system</h2>
+    </header>
+
+    <main class="booking-main">
+        <div class="reservation-time">
+            <div class="calendar-wrapper">
+                <h4>Pick a date</h4>
+                <div class="calendar" id="calendar">
+                        
+                </div>
+            </div>
+            <div class="hours-wrapper">
+                <h4>Pick an hour</h4>
+                <div class="hours-table">
+                    <div class="hour">10:00</div>
+                    <div class="hour">10:30</div>
+                    <div class="hour">11:00</div>
+                    <div class="hour">11:30</div>
+                    <div class="hour">12:00</div>
+                    <div class="hour">12:30</div>
+                    <div class="hour">13:00</div>
+                    <div class="hour">13:30</div>
+                    <div class="hour">14:00</div>
+                    <div class="hour">14:30</div>
+                    <div class="hour">15:00</div>
+                    <div class="hour">15:30</div>
+                    <div class="hour">16:00</div>
+                    <div class="hour">16:30</div>
+                    <div class="hour">17:00</div>
+                    <div class="hour">17:30</div>
+                    <div class="hour">18:00</div>
+                    <div class="hour">18:30</div>
+                </div>   
+                <div class="selected-time">
+                    <h6>Selected time</h6>
+                    <div class="time-wrapper">
+                        <label class="input-label" for="user_date">Selected date:</label>
+                        <input class="input-date" type="text" id="user_date" name="user_date" disabled>
+                    </div>
+                    <div class="time-wrapper">
+                        <label class="input-label" for="user_hour">Selected hour:</label>
+                        <input class="input-date" type="text" id="user_hour" name="user_hour" disabled>
+                    </div>
+                </div>             
+            </div>
+            <div class="selected-services">
+                <h4>Select a service</h4>
+                <div class="services-wrapper">
+                    <div class="form-field-wrapper service-wrapper">
+                        <label class="cb-label" for="user_service1">Service one</label>
+                        <input class="cb-form" type="checkbox" id="user_service1" name="user_service1">
+                    </div>
+                    <div class="form-field-wrapper service-wrapper">
+                        <label class="cb-label" for="user_service2">Service two</label>
+                        <input class="cb-form" type="checkbox" id="user_service2" name="user_service2">
+                    </div>
+                    <div class="form-field-wrapper service-wrapper">
+                        <label class="cb-label" for="user_service3">Service three</label>
+                        <input class="cb-form" type="checkbox" id="user_service3" name="user_service3">
+                    </div>
+                    <div class="form-field-wrapper service-wrapper">
+                        <label class="cb-label" for="user_service4">Service four</label>
+                        <input class="cb-form" type="checkbox" id="user_service4" name="user_service4">
+                    </div>
+                    <div class="form-field-wrapper service-wrapper">
+                        <label class="cb-label" for="user_service5">Service five</label>
+                        <input class="cb-form" type="checkbox" id="user_service5" name="user_service5">
+                    </div>
+                    <div class="form-field-wrapper service-wrapper">
+                        <label class="cb-label" for="user_service6">Service six</label>
+                        <input class="cb-form" type="checkbox" id="user_service6" name="user_service6">
+                    </div>
+                    <div class="form-field-wrapper service-wrapper">
+                        <label class="cb-label" for="user_service7">Service seven</label>
+                        <input class="cb-form" type="checkbox" id="user_service7" name="user_service7">
+                    </div>
+                    <div class="form-field-wrapper service-wrapper">
+                        <label class="cb-label" for="user_service8">Service eight</label>
+                        <input class="cb-form" type="checkbox" id="user_service8" name="user_service8">
+                    </div>
+                    <div class="form-field-wrapper service-wrapper">
+                        <label class="cb-label" for="user_service9">Special service</label>
+                        <input class="cb-form" type="checkbox" id="user_service9" name="user_service9">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="section-form">
+            <header class="sec-header">
+                <h4>User information</h4>
+            </header>
+            <div id="contact-form">
+                <form class="form contact-form" action="#" method="GET">
+                    <div class="form-field-wrapper fname-wrapper">
+                        <input class="form-fname" type="text" id="user_fname" name="user_fname">
+                        <label class="placeholder" for="user_fname">First Name</label>
+                    </div>
+                    <div class="form-field-wrapper lname-wrapper">
+                        <input class="form-lname" type="text" id="user_lname" name="user_lname">
+                        <label class="placeholder" for="user_lname">Last Name</label>
+                    </div>
+                    <div class="form-field-wrapper email-wrapper">
+                        <input class="form-email" type="email" id="user_email" name="user_email">
+                        <label class="placeholder" for="user_email">Email</label>
+                    </div>
+                    <div class="form-field-wrapper phone-wrapper">
+                        <input class="form-phone" type="tel" id="user_phone" name="user_phone">
+                        <label class="placeholder" for="user_phone">Telephone</label>
+                    </div>
+                    <div class="form-field-wrapper ta-wrapper">
+                        <textarea class="form-content" id="user_message" name="user_message" rows="4"></textarea>
+                        <label class="placeholder" for="user_message">What do you need for you booking?</label>
+                    </div>
+                    <button class="form-button" type="submit">Book</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+</section>
             </main>
         </div>
         
         
         <footer class="site-footer">
-            <nav class="site-nav nav-footer">
+            <div class="footer-wrapper">
+                <div class="footer-logo">
+                        <a href="/barber-shop">
+                            <div>
+                                <img src="/barber-shop/images/logos/RazorLogo.png" alt="">
+                            </div>
+                            <p class="site-title">
+                                Barber shop
+                            </p>
+                        </a>
+                    </div>
+                <div class="footer-links">
+                    <h6>Site links</h6>
+                    <nav class="site-nav nav-footer">
     <ul>
         
             
@@ -160,12 +261,22 @@
         
     </ul>
 </nav>
+                </div>
+                <div class="copyright">
+                    <h6><i class="far fa-copyright"></i> Alchemist, 2019</h6>
+                </div>
+            </div>
         </footer>
         
     </div>
     
     <button class="btn back-top" id="back-top"><i class="fas fa-arrow-up"></i>Back</br>to top</button>
-    <!-- <a class="btn back-top" id="back-top"><i class="fas fa-arrow-up"></i><p>Back</br>to top</p></a> -->
     <script src="/barber-shop/scripts/scripts.js"></script>
+    
+    
+    
+    <script>createCalendar()</script>
+    <script>getSelectedDate()</script>
+    
 </body>
 </html>

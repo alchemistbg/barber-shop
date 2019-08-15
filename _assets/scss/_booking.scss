@@ -1,0 +1,152 @@
+.booking-section{
+    margin-bottom: 2em;
+}
+
+.reservation-time {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @media (max-width: 938px){
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+    }
+}
+
+h4 {
+    text-align: center;
+}
+
+h6 {
+    padding-left: 0.7em;
+}
+
+.calendar {
+    margin-bottom: 2em;
+    padding-right: 2em;
+    
+    @media (max-width: 938px){
+        padding-right: 0;
+    }
+
+    display: grid;
+    grid-template-columns: repeat(7, minmax(3em, 4em)); 
+    grid-template-rows: repeat(6, minmax(3em, 4em));
+    grid-gap: 1em;
+    @include bp(phonel) {
+        grid-gap: 0.5em;
+    }
+}
+
+.day {
+    cursor: default;
+    font-weight: bold;
+    text-align: center;
+    line-height: 4em;
+    border-radius: var(--border-radius-main);
+    &.day-title {
+        background: #369;
+        color: #fff;
+    }
+    
+    &.curr-month {
+        background: #ccc;
+    }
+
+    &.today {
+        background: #090;
+    }
+    
+    &.prev-month, &.next-month {
+        background: #ddd;
+        color:  #999;
+    }
+}
+
+.hours-table {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(3em, 4em));
+    grid-template-rows: repeat(3, minmax(3em, 4em));
+    grid-gap: 1em;
+}
+
+.hour {
+    cursor: default;
+    text-align: center;
+    background: #963;
+    line-height: 4em;
+    border-radius: 0.3em;
+    color: #fff;
+    font-weight: bold;
+}
+
+div.day:nth-child(7n+1){
+    background: #900;
+    color: #fff;
+}
+
+.selected-time {
+    margin: auto;
+    margin: 3em 0;
+    width: 100%;
+    
+    .time-wrapper {
+        margin-bottom: 0.5em;
+    }
+    
+    .input-label {
+        display: inline-block;
+        width: 10em;
+        padding: 0.3em 0.7em;
+        background: #ddd;
+        font-size: 1.1em;
+        font-weight: bold;
+        color: #000;
+    }
+    
+    .input-date{
+        font-size: 1.1em;
+        display: inline-block;
+        padding: 0.2em 0.3em;
+        border: none;
+        border: 2px solid #ddd;
+    }
+}
+
+.selected-services{
+    width: 90%;
+    margin: auto;
+    margin-bottom: 2em;
+    
+    .services-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    .service-wrapper {
+        margin: 0 1em;
+    }
+    
+    .cb-label {
+        display: inline-block;
+        width: 8em;
+        margin: 0.5em 0.2em 0.5em 0;
+        padding: 0.3em 0.8em;
+        font-size: 1.3em;
+        font-weight: bold;
+        color: #fff;
+        border-radius: var(--border-radius-main);
+        background: var(--color-link-main);
+    }
+    
+    .cb-label:hover {
+        background: var(--color-link-hover);
+    }
+
+    .cb-form {
+        transform: scale(1.2);
+    }
+
+}

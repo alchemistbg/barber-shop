@@ -76,12 +76,27 @@ footnav: 1
             </header>
             <div id="contact-form">
                 <form class="form contact-form" action="#" method="GET">
-                    <input class="form-fname" type="text" id="fname" name="user_fname">
-                    <input class="form-lname" type="text" id="lname" name="user_fname">
-                    <input class="form-email" type="email" id="mail" name="user_mail">
-                    <input class="form-subject" type="text" id="subject" name="user_subject">
-                    <textarea class="form-content" id="msg" name="user_message" placeholder="Type your comment here..."></textarea>
-                    <button class="form-button" type="submit">Send your message</button>
+                    <div class="form-field-wrapper fname-wrapper">
+                        <input class="form-fname" type="text" id="user_fname" name="user_fname">
+                        <label class="placeholder" for="user_fname">First Name</label>
+                    </div>
+                    <div class="form-field-wrapper lname-wrapper">
+                        <input class="form-lname" type="text" id="user_lname" name="user_lname">
+                        <label class="placeholder" for="user_lname">Last Name</label>
+                    </div>
+                    <div class="form-field-wrapper email-wrapper">
+                        <input class="form-email" type="email" id="user_email" name="user_email">
+                        <label class="placeholder" for="user_email">Email</label>
+                    </div>
+                    <div class="form-field-wrapper subject-wrapper">
+                        <input class="form-subject" type="text" id="user_subject" name="user_subject">
+                        <label class="placeholder" for="user_subject">Subject</label>
+                    </div>
+                    <div class="form-field-wrapper ta-wrapper">
+                        <textarea class="form-content" id="user_message" name="user_message" rows="4"></textarea>
+                        <label class="placeholder" for="user_message">Type your message here...</label>
+                    </div>
+                    <button class="form-button" type="submit">Send</button>
                 </form>
             </div>
         </section>

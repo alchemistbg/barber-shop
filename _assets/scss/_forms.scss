@@ -1,151 +1,309 @@
-#job-form,
-#comment-form,
-#contact-form {
-    border: 2px solid var(--color-border-main);
-    border-radius: var(--border-radius-main);
-    padding: 1em;
-    margin: 0 auto;
-}
-
 .form {
-    display: grid;
-    grid-gap: 0.5em;
+
+    textarea {
+        display: block;
+    }
     
     &-header{
+        padding-top: 2em;
         padding-bottom: 0.5em;
     }
 
-    &.comment-form {
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(3, 2.8em);
-        grid-template-areas:
-                "fname fmsg fmsg"
-                "femail fmsg fmsg"
-                ". fbtn .";    
-    }
-    
-    &.contact-form {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(7, 2.8em);
-        grid-template-areas:
-                "ffname flname"
-                "femail fsubj"
-                "fmsg fmsg"
-                "fmsg fmsg"
-                "fmsg fmsg"
-                "fmsg fmsg"
-                ". fbtn";    
-    }
-    
-    &.job-form {
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(5, 2.8em);
-        grid-template-areas:
-                "fpos ffile ffile"
-                "fname fmsg fmsg"
-                "femail fmsg fmsg"
-                "fphone fmsg fmsg"
-                ". fbtn .";    
+    &.comment-form, &.contact-form, &.job-form{
+        display: flex;
+        flex-wrap: wrap;
     }
 
     &.comment-form, &.contact-form, &.job-form{
-        @include bp (tablets){
+        @include bp (phonel){
             display: flex;
             flex-direction: column;
         }
     }
 
-    &-name {
-        border: 2px solid green;
-        grid-area: fname;
-    }
-
-    &-fname {
-        border: 2px solid green;
-        grid-area: ffname;
-    }
-
-    &-lname {
-        border: 2px solid green;
-        grid-area: flname;
-    }
-    
-    &-email {
-        border: 2px solid red;
-        grid-area: femail;
-    }
-
-    &-phone {
-        border: 2px solid red;
-        grid-area: fphone;
-    }
-
-    &-file, &-pos {
+    &-position, &-file {
+        padding: 0em;
+        margin-top: 0.5em;
+        margin-bottom: 0.6em;
         display: flex;
         align-items: center;
-    }
+        border: var(--border-form-width) solid #999;
+        
+        &:focus-within {
+            border: var(--border-form-width) solid var(--color-link-main);
+        }
 
-    &-file {
-        border: 2px solid red;
-        grid-area: ffile;
-    }
-    
-    &-subject {
-        border: 2px solid red;
-        grid-area: fsubj;
-    }
-    
-    &-pos {
-        border: 2px solid red;
-        grid-area: fpos;
+        label {
+            padding: 0em 0.5em;
+        }
     }
     
     &-content {
-        border: 2px solid yellow;
         outline: none;
-        grid-area: fmsg;
-        
-        width: 100%;
-        height: 100%;
-        padding-bottom: 0;
-        margin-bottom: 0;
         resize: none;
     }
-    
-    &-button {
-        grid-area: fbtn;
+
+    input, select,
+    input:focus, select:focus,
+    input:hover, select:hover {
+        outline: none;
+        border: none;
     }
 
-    input, select{
-        border: 2px solid black;
-        outline: none;
-        // width: 100%;
+    select, .input-file {
+        height: 2.75em;
+        border: none;
+        border-left: var(--border-form-width) solid #999;
+        background: #ddd;
+        flex-grow: 1;
+    }
+    
+    select:focus, .input-file:focus {
+        border-left: var(--border-form-width) solid var(--color-link-main);
     }
     
     select {
-        height: 2.75em;
-        flex-grow: 1;
-        padding: 0.5em 0;
+        // appearance: none;
+        padding: 0.5em 0.2em;
+        position: relative;
+    }
+
+    select:hover {
+        background-color: #999;
+        color: #fff;
+    }
+
+    .form-file {
+        .selected-file {
+            cursor: default;
+            padding-left: 0.4em;
+        }
+    }
+
+    .input-file {
+        width: 0.1px;
+        height: 0.1px;
+        opacity: 0;
+        left: 0em;
+        overflow: hidden;
+        position: absolute;
+        z-index: -1;
     }
     
-    input[type="file"] {
-        flex-grow: 1;
-        padding: 0.5em;
+    .input-file + label {
+        line-height: 2.75em;
+        background-color: #ddd;
+        border-right: var(--border-form-width) solid #999;
+        display: inline-block;
     }
 
-    &-pos, &-file {
-        padding: 0em;
+    .input-file:focus + label {
+        border-right: var(--border-form-width) solid var(--color-link-main);
     }
 
-    &-name, &-fname, &-lname, &-email, &-phone, &-subject, &-button{
-        @include bp (tablets){
-            padding: 0.684em 0;
+    .input-file:hover + label {
+        background-color: #999;
+        color: #fff;
+    }
+
+    .form-field-wrapper {
+        margin-bottom: 0.5em;
+        position: relative;
+    
+        input, textarea,
+        .placeholder {
+            line-height: 2;
+            font-size: 1.1em;
+        }
+        
+        &::before {
+            position: absolute;
+            top: 0.9em;
+            left: 0.5em;
+            font-family: 'Font Awesome 5 Free';
+            font-size: 1.1em;
+            color: #999;
+            z-index: 999;
+        }
+
+        &::after {
+            display: block;
+            content: '';
+            height: 2px;
+            background: none;
+        }
+
+        &:focus-within::after {
+            background: var(--color-link-main);
+        }
+        
+        input, textarea {
+            margin-top: 0.4em;
+            width: 100%;
+            padding: 0.3em 0.3em 0.2em 2em;
+            border: var(--border-form-width) solid #999;
+            outline: 0;
+        }
+        
+        input:focus,
+        textarea:focus {
+            color: var(--color-link-main);
+            border-color: var(--color-link-main);
+        }
+
+        &:focus-within::before {
+            color: var(--color-link-main);
+        }
+        
+        .placeholder {
+            margin-left: 0.4em;
+            margin-top: 1.1em;
+            padding-left: 1.6em;
+            color: #999;
+            background: #fff;
+            line-height: 1em;
+            position: absolute;
+            top: 0;
+            left: 0;
+            cursor: text;
+            transition: all 0.2s;
+        }
+        
+        input:focus + .placeholder,
+        input.filled-input + .placeholder,
+        textarea:focus + .placeholder,
+        textarea.filled-input + .placeholder {
+            margin-left: 1.8em;
+            margin-top: 1.3em;
+            padding: 0 0.9em;
+            line-height: 1em;
+            font-size: 75%;
+            transform: translateY(-125%);
+        }
+        
+        input:valid + .placeholder,
+        textarea.filled-input + .placeholder {
+            color: #999;
+        }
+
+        input:invalid,
+        textarea:invalid {
+            outline: none;
+            box-shadow: none;
+        }
+        
+        input:focus + .placeholder,
+        input.filled-input + .placeholder,
+        textarea:focus + .placeholder,
+        textarea.filled-input + .placeholder {
+            color: var(--color-link-main);
+        }
+    }
+
+    .name-wrapper {
+        flex: 1 1 48%;
+        margin-right: 1em;
+        @include bp (phonel){
+            margin-right: 0em;
+        }
+        
+        &::before {
+            content: '\f007';
+        }
+    }
+
+    .fname-wrapper {
+        flex: 1 1 48%;
+        margin-right: 1em;
+        @include bp (phonel){
+            margin-right: 0em;
+        }
+        
+        &::before {
+            content: '\f007';
+        }
+    }
+
+    .lname-wrapper {
+        flex: 1 1 48%;
+        
+        &::before {
+            content: '\f007';
         }
     }
     
-    &-content {
-        @include bp (tablets){
-            height: 8em;
+    .email-wrapper {
+        flex: 1 1 48%;
+        &::before {
+            font-weight: bold;
+            content: '\f1fa';
         }
+    }
+
+    @at-root .page-join-us &{
+        .email-wrapper {
+            padding-right: 1em;
+        }
+    }
+    
+    &.job-form, &.contact-form {
+        .email-wrapper {
+            flex: 1 1 48%;
+            margin-right: 1em;
+            padding: 0;
+            @include bp (phonel){
+                margin-right: 0em;
+            }
+        }
+    }
+    
+    .subject-wrapper {
+        flex: 1 1 48%;
+
+        &::before {
+            content: '\f0a4';
+        }
+    }
+
+    .ta-wrapper {
+        // width: 100%;
+        flex: 1 1 100%;
+
+        textarea {
+            line-height: 1.4;
+            padding: 0.5em 0.3em;
+        }
+
+        .placeholder {
+            margin-left: 0.2em;
+            padding-left: 0.1em;
+        }
+
+        textarea:focus + .placeholder,
+        textarea.filled-input + .placeholder {
+            margin-left: 0.2em;
+            padding: 0 0.3em;
+        }
+    }
+
+    .phone-wrapper {
+        flex: 1 1 48%;
+        &::before{
+            font-weight: bold;
+            content: '\f3cd';
+        }
+    }
+
+    .form-position {
+        flex: 1 1 30%;
+        margin-right: 1em;
+        
+        @include bp (phonel) {
+            margin-right: 0em;
+        }
+    }
+    
+    .form-file {
+        flex: 1 1 66%;
     }
 }

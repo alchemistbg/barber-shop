@@ -110,19 +110,38 @@ order: 5
                 <p class="comment-author">Socrates</p>
             </li>
         </ul>
-
-        <div id="socail-links">
-
-        </div>
         
-        <div id="comment-form">
+        <div id="form-wrapper">
             <h6 class="form-header">Write your comment:</h6>
             <form class="form comment-form" action="#" method="GET">
-                <input class="form-name" type="text" id="name" name="user_name">
-                <input class="form-email" type="email" id="mail" name="user_mail">
-                <textarea class="form-content" id="msg" name="user_message" placeholder="Type your comment here..."></textarea>
-                <button class="form-button" type="submit">Send your message</button>
+                <div class="form-field-wrapper name-wrapper">
+                    <input class="form-name" type="text" id="user_name" name="user_name">
+                    <label class="placeholder" for="user_name">Name</label>
+                </div>
+                <div class="form-field-wrapper email-wrapper">
+                    <input class="form-email" type="email" id="user_email" name="user_email">
+                    <label class="placeholder" for="user_email">Email</label>
+                </div>
+                <div class="form-field-wrapper ta-wrapper">
+                    <textarea class="form-content" id="user_message" name="user_message" rows="4"></textarea>
+                    <label class="placeholder" for="user_message">Type your comment here...</label>
+                </div>
+                <button class="form-button" type="submit">Comment</button>
             </form>
         </div>
     </main>
+
+    <!-- <script>
+        let filledInput = document.getElementsByTagName('input');
+        
+        for (let i = 0; i < filledInput.length; i++){
+            filledInput[i].addEventListener('input', function (){
+                if (this.value){
+                    this.classList.add('filled-input')
+                }else{
+                    this.classList.remove('filled-input');
+                }
+            });
+        }
+    </script> -->
 </section>

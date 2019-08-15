@@ -16,8 +16,11 @@
 
             .sec-header {
                 padding: 3em 0 2em 0;
+                @include bp (tablets) {
+                    padding-bottom: 0em;
+                }
             }
-
+            
             .sec-header::after {
                 display: block;
                 content: '';
@@ -27,25 +30,37 @@
                 background: #000;
                 margin-top: 2em;
                 margin-bottom: 2em;
+                @include bp (tablets) {
+                    margin-bottom: 1em;
+                }
             }
 
             .sec-main {
-                // display: flex;
-                // justify-content: space-between;
-                display: grid;
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                @include bp (tablets) {
+                    justify-content: center;
+                }
                 // align-items: center;
-                grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-                grid-gap: 1em;
+                // display: grid;
+                // grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+                // grid-gap: 1em;
             }
             
             .sec-item {
 
-                // overflow: hidden;
-                // width: 30%;
-                // border: 2px solid green;
+                width: 32%;
+
+                @include bp (tablets) {
+                    min-width: 90%;
+                }
 
                 h5{
                     padding-bottom: 1em;
+                    @include bp (tablets) {
+                        padding-top: 2em;
+                    }
                 }
 
                 p {
@@ -76,7 +91,15 @@
             }
 
             .contacts {
+                .sec-item {
+                    @include bp (tablets) {
+                        min-width: 32%;
+                    }
+                    @include bp (phonel) {
+                        min-width: 80%;
+                    }
 
+                }
                 .list {
                     list-style: none outside;
                     padding: 0;
