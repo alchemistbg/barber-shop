@@ -55,6 +55,13 @@
             margin: auto;
             text-align: center;
             padding-bottom: 1em;
+
+        }
+        @include bp(tablets){
+            h6 {
+                margin-top: 2.5em;
+                padding-bottom: 0.5em;
+            }
         }
 
         .sec-main{

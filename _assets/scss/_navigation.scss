@@ -37,6 +37,12 @@
 }
 
 .site-sidebar {
+    @include bp(tabletl){
+        h3 {
+            text-align: center;
+            margin: 0;
+        }
+    }
     .nav{
         ul {
             list-style: none outside;
@@ -45,7 +51,7 @@
             @include bp (tabletl){
                 display: flex;
                 justify-content: center;
-
+                padding-bottom: 2em;
                 a.btn {
                     padding: 0.5em;
                 }

@@ -6,7 +6,7 @@
         list-style: none outside;
         padding: 0;
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         grid-template-rows: repeat(auto, 200px);
         grid-gap: 2em;
         grid-auto-flow: row dense;
@@ -26,14 +26,15 @@
         .post-title {
             font-size: 1.5em;
         }
+
         .post-meta {
             font-size: 1.1em;
+            padding-left: 0;
         }
     }
 
     .post-high {
         grid-column: span 2;
-        // grid-row: span 2;
     }
     
     @media (max-width: 450px) {
@@ -128,7 +129,11 @@
     .post-title {
         font-family: 'PT serif', serif;
     }
-
+    
+    .post-meta {
+            // font-size: 1.1em;
+            padding-left: 0;
+        }
     .post-body {
         clear: both;
     }
