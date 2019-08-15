@@ -39,6 +39,7 @@
 .site-sidebar {
     @include bp(tabletl){
         h3 {
+            font-size: 1.2em;
             text-align: center;
             margin: 0;
         }
