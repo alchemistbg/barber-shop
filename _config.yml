@@ -56,10 +56,10 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
-  - node_modules
-  - docs
-  - _assets
   - gulpfile.js
   - package.json
   - package-lock.json
-  # - .gitignore
+  - node_modules
+  - docs
+  - _assets
+  - _visualArt
