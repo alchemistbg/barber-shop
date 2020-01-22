@@ -275,13 +275,14 @@ blockquote {
   color: var(--color-nav-text);
   background: var(--color-nav-bg);
   border: 2px solid var(--color-nav-bg);
-  border-radius: var(--border-radius-main); }
+  border-radius: var(--border-radius-main);
+  transition: opacity 0.25s, background 0.25s; }
+  .page a.btn:hover {
+    background: var(--color-link-hover); }
   .page a.btn:hover {
     background: var(--color-nav-text);
     color: var(--color-nav-bg);
-    border: 2px solid var(--color-nav-bg);
-    -webkit-animation: fadeIn 0.1s linear forwards;
-            animation: fadeIn 0.1s linear forwards; }
+    border: 2px solid var(--color-nav-bg); }
   .page a.btn.read-more, .page a.btn.back-to-list, .page a.btn.no-border {
     color: var(--color-nav-bg);
     background: var(--color-nav-text); }
@@ -302,18 +303,19 @@ blockquote {
     font-weight: bold;
     color: var(--color-nav-bg);
     background: var(--color-link-main);
-    border: none; }
+    border: none;
+    opacity: 0.75; }
     .page a.btn.book:hover {
-      background: var(--color-link-hover);
-      -webkit-animation: fadeIn 0.2s ease-in;
-              animation: fadeIn 0.2s ease-in; }
+      opacity: 1; }
 
 .page li.selected > a.btn {
   background: var(--color-nav-text);
   color: var(--color-nav-bg);
   border: 2px solid var(--color-nav-bg); }
 
-.page .form-button, .page .form-button:hover, .page .form-button:focus {
+.page .form-button,
+.page .form-button:hover,
+.page .form-button:focus {
   margin-left: auto;
   border: none;
   outline: none;
