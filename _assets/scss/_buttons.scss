@@ -13,7 +13,7 @@
         opacity: 0.5;
         transition: opacity 0.2s linear;
 
-        &:hover{
+        &:hover {
             opacity: 1;
         }
 
@@ -33,11 +33,11 @@
             line-height: 1;
         }
 
-        &.show{
+        &.show {
             animation: fadeInBackBtn 0.3s linear;
         }
-        
-        &.hide{
+
+        &.hide {
             animation: fadeOutBackBtn 0.3s linear;
         }
     }
@@ -48,18 +48,25 @@
         background: var(--color-nav-bg);
         border: 2px solid var(--color-nav-bg);
         border-radius: var(--border-radius-main);
-        
+
+        transition: opacity 0.25s, background 0.25s;
+
+        &:hover {
+            background: var(--color-link-hover);
+        }
+
         &:hover {
             background: var(--color-nav-text);
             color: var(--color-nav-bg);
             border: 2px solid var(--color-nav-bg);
-            animation: fadeIn 0.1s linear forwards;
         }
-        
-        &.read-more, &.back-to-list, &.no-border {
+
+        &.read-more,
+        &.back-to-list,
+        &.no-border {
             color: var(--color-nav-bg);
             background: var(--color-nav-text);
-            
+
             &:hover {
                 background: var(--color-nav-bg);
                 color: var(--color-nav-text);
@@ -70,38 +77,39 @@
         &.no-border {
             border: none;
         }
-        
+
         &.back-to-list {
             display: block;
             width: fit-content;
             margin-left: auto;
         }
-        
+
         &.book {
             font-size: 1.3em;
             font-weight: bold;
             color: var(--color-nav-bg);
             background: var(--color-link-main);
             border: none;
-            
-            &:hover{
-                background: var(--color-link-hover);
-                animation: fadeIn 0.2s ease-in;
+
+            opacity: 0.75;
+
+            &:hover {
+                opacity: 1;
             }
         }
     }
-    
-    li.selected > a.btn {
+
+    li.selected>a.btn {
         background: var(--color-nav-text);
         color: var(--color-nav-bg);
         border: 2px solid var(--color-nav-bg);
     }
 
-    .back-to-blog{
+    .back-to-blog {}
 
-    }
-
-    .form-button, .form-button:hover, .form-button:focus {
+    .form-button,
+    .form-button:hover,
+    .form-button:focus {
         margin-left: auto;
         border: none;
         outline: none;
@@ -111,7 +119,7 @@
         font-size: 1.2em;
         font-weight: bold;
     }
-    
+
     .form-button:hover {
         background-color: var(--color-link-hover);
         animation: fadeIn 0.2s ease-in;
